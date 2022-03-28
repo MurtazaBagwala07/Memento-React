@@ -1,0 +1,34 @@
+@import url('../../App.css');
+
+.homepage-wrapper{
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.homepage-title{
+    font-size: 5rem;
+    color:var(--primary-color)
+}
+
+.homepage-description{
+    font-size: 3rem;
+    color:var(--primary-color)
+}
+
+.homepage-action-btns{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.homepage-action-btn{
+    width:12rem;
+    height:3rem;
+    color:var(--primary-color);
+    border:0.1rem solid var(--primary-color);
+    background-color: var(--secondary-color);
+    font-size:1.2rem;
+}

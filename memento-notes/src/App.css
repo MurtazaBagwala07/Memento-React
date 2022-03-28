@@ -1,51 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
+
+:root{
+  --primary-color:orange;
+  --secondary-color:white;
+  --red :red;
+  --green :green;
+  --black:black;
+  --blue :blue;
+}
+
+* {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
 .App {
+  font-family: sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0rem 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.header-title {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.header-social-container {
+  font-size: 1.75rem;
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--secondary-color);;
+}
+
+.header-social-icon {
+  background-color: var(--primary-color);;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+  color: inherit;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--primary-color);;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  gap: 1rem;
+  width: 40rem;
+  margin: 2rem 0rem;
+}
+
+.input {
+  outline: none;
+  border: none;
+  color: var(--primary-color);;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+  padding: 0.5rem 1rem;
+}
+
+.input-content {
+  resize: none;
+  height: 8rem;
+}
+
+.action-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.action-btn {
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--secondary-color);;
+  cursor: pointer;
+  width: 6rem;
+  height: 2rem;
+  color: var(--primary-color);;
+  font-size: 1rem;
+}
+
+.noteslist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.notecard {
+  background-color: var(--black);
+  color: var(--secondary-color);;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+}
+
+.note-title {
+  font-size: 2rem;
+}
+
+.note-content {
+  font-size: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 3rem;
+  max-height: 10rem;
+  min-width: 20rem;
+  max-width: 30rem;
+  word-break: break-all;
+}
+
+.red {
+  background-color: var(--red);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.black {
+  background-color: var(--black);
+}
+
+.orange {
+  background-color: var(--primary-color);
+}
+
+.color-btns {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.color-btn {
+  color: var(--secondary-color);;
+  font-size: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  outline: none;
+  border: 0.1rem solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.note-action-btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.note-action-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);;
+  border: 0.1rem solid var(--secondary-color);;
+  font-weight: 900;
+  font-size: 1rem;
+  outline: none;
+  color: var(--secondary-color);;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 8px;
   }
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 10px;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (min-width: 900px) {
+  html {
+    font-size: 12px;
+  }
 }
 
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
 }
