@@ -24,6 +24,7 @@ export const Login = () => {
             localStorage.setItem("token", token);
 		    localStorage.setItem("isAuth", true);
             setAuth({...auth, token:token,isAuth:true});
+            navigate('/notes')
         }
     }
 
