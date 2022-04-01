@@ -14,7 +14,6 @@ export const NoteProvider =({children})=>{
             if(auth.isAuth){
                 const notesData = await GetNotesService(auth.token)
                 const archiveData = await GetArchiveNotesService(auth.token)
-                console.log(state)
                 dispatch({
                     type: 'SET_NOTES',
                     payload: notesData
@@ -23,10 +22,9 @@ export const NoteProvider =({children})=>{
                     type: 'SET_ARCHIVES',
                     payload: archiveData
                 })
-                console.log(state.notes)
-                console.log(state.archivedNotes)
             }            
         })();
+        console.log(state);
     },[auth.isAuth])
     return(
         <NoteContext.Provider value={{state,dispatch}}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DeleteNoteService } from '../../services'
+import { DeleteNoteService,AddtoArchive } from '../../services'
 import {useAuth,useNotes} from '../../hooks'
 import {Modal} from '../Modal/Modal'
 
@@ -17,6 +17,18 @@ export const Notecard = ({note}) => {
     })
   }
 
+  const moveToArchive = async(note)=>{
+    const resp = await AddtoArchive(note,auth.token)
+    dispatch({
+      type:"SET_ARCHIVE",
+      payload:resp.archives
+    })
+    dispatch({
+      type:'SET_NOTES',
+      payload:resp.notes
+    })
+  }
+
   return (
     <>
     <div className="notecard" >
@@ -26,6 +38,9 @@ export const Notecard = ({note}) => {
       <div className="note-action-btns">
         <button onClick={()=>setEdit(true)} className="note-action-btn">
           <i class="far fa-edit"></i>
+        </button>
+        <button onClick={()=>moveToArchive(note)} className="note-action-btn">
+          <i class="fas fa-archive"></i>
         </button>
         <button onClick={()=>deleteNote(note._id)} className="note-action-btn">
           <i class="far fa-trash-alt"></i>

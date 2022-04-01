@@ -20,7 +20,6 @@ export const InputNote = () => {
 
       const submitHandler=async(e)=>{
         e.preventDefault();
-        console.log(inputNote)
         const response = await AddNoteService(inputNote,auth.token);
         dispatch({
           type:"SET_NOTES",

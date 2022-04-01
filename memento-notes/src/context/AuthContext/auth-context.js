@@ -11,9 +11,7 @@ export const AuthProvider = ({children})=>{
 		if (token) setAuth({ token, isAuth: true });
         else setAuth(initialAuth);
     },[])
-    
-    console.log(auth)
-    
+        
     return(
         <AuthContext.Provider value={{auth,setAuth,initialAuth}}>
             {children}
