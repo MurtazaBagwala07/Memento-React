@@ -1,0 +1,17 @@
+.main-page-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.notes-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

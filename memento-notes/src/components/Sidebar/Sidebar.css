@@ -1,0 +1,25 @@
+.sidebar-wrapper{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+    margin: 0.1rem 0rem;
+    border: 0.2rem solid orange;
+}
+
+.sidebar-list-wrapper{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    justify-content: center;
+    align-items:center;
+}
+
+.sidebar-list-item,.sidebar-link{
+    text-decoration: none;
+    color:inherit;
+}
+
