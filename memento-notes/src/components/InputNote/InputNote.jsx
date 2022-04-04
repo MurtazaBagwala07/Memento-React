@@ -3,6 +3,8 @@ import { AddNoteService } from '../../services';
 import {useAuth,useNotes} from '../../hooks'
 export const InputNote = () => {
 
+    const colors= ["shade-1","shade-2","shade-3","shade-4","shade-5"] 
+
     const {auth} = useAuth();
     const {state,dispatch} = useNotes();
 
@@ -11,20 +13,26 @@ export const InputNote = () => {
     const [inputNote,setInputNote] = useState({
         title: "",
         content: "",
-        time: ""
+        time: "",
+        label:"",
+        color:''
     })
 
     const changeHandler = (e) => {
         setInputNote({ ...inputNote, [e.target.name]: e.target.value });
+        console.log(inputNote);
       };
 
       const submitHandler=async(e)=>{
         e.preventDefault();
+        let random =colors[Math.floor(Math.random()*colors.length)]
+        setInputNote({ ...inputNote,time:`${new Date(Date.now()).toLocaleDateString()}`, color:random})
         const response = await AddNoteService(inputNote,auth.token);
         dispatch({
           type:"SET_NOTES",
           payload:response
         })
+        console.log(response)
         setExpand(false);
       }
 
@@ -49,6 +57,7 @@ export const InputNote = () => {
           type="text"
           placeholder="Enter Content here..."
         />
+        <input className="input input-title" name='label' onChange={changeHandler} type="text" placeholder='Enter Label for Note'/>
         <div className="action-btns">
           <button className="action-btn">Save</button>
           <button

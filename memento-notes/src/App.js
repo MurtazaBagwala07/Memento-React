@@ -1,5 +1,5 @@
 import "./App.css";
-import {Homepage,Login,SignUp,NoteDisplayPage,ArchiveDisplayPage} from "./pages";
+import {Homepage,Login,SignUp,NoteDisplayPage,ArchiveDisplayPage,LabelDisplayPage} from "./pages";
 import { Routes, Route } from 'react-router-dom';
 import Mockman from 'mockman-js'
 
@@ -21,6 +21,7 @@ function App() {
       <Route path='/sign-up' element={<SignUp/>}/>
       <Route path='/notes' element={<NoteDisplayPage/>}/>
       <Route path='/archive' element={<ArchiveDisplayPage/>}/>
+      <Route path='/labels' element={<LabelDisplayPage/>}/>
       <Route path='/mockman' element={<MockAPI/>}/>
     </Routes>    
     </div>
