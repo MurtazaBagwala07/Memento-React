@@ -20,12 +20,11 @@ export const InputNote = () => {
 
     const changeHandler = (e) => {
         setInputNote({ ...inputNote, [e.target.name]: e.target.value });
-        console.log(inputNote);
       };
 
       const submitHandler=async(e)=>{
         e.preventDefault();
-        let random =colors[Math.floor(Math.random()*colors.length)]
+        const random =colors[Math.floor(Math.random()*colors.length)]
         setInputNote({ ...inputNote,time:`${new Date(Date.now()).toLocaleDateString()}`, color:random})
         const response = await AddNoteService(inputNote,auth.token);
         dispatch({
