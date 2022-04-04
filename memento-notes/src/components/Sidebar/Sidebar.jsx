@@ -14,7 +14,7 @@ export const Sidebar = () => {
                 <Link className='sidebar-link' to='/archive'>Archives</Link>
             </div>
             <div className='sidebar-list-item'>
-                <Link className='sidebar-link' to='/notes'>Labels</Link>
+                <Link className='sidebar-link' to='/labels'>Labels</Link>
             </div>
         </ul>
         <div>
