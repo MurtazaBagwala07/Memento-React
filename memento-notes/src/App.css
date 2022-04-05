@@ -120,6 +120,7 @@
 
 .notecard {
   color: var(--black);
+  background-color: orange;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

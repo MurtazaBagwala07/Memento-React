@@ -7,7 +7,6 @@ export const LabelDisplayPage = () => {
     const {state} = useNotes();
     const labels = state.notes.reduce((acc,curr)=> acc.concat(curr.label),[])
     let uniqueLabels = [...new Set(labels)];
-    console.log(uniqueLabels)
   return (
     <div className='main-page-wrapper'>
       <Header/>
