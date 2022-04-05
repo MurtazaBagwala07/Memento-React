@@ -1,7 +1,9 @@
 export const initialState ={ 
     notes:[],
     archivedNotes:[],
-    label:[]
+    searchValue:'',
+    date:''
+
 }
 
 export const DataReducer=(state,action)=>{
@@ -13,8 +15,11 @@ export const DataReducer=(state,action)=>{
         case 'SET_ARCHIVE':
             return {...state,archivedNotes:[...action.payload]}
         
-        case 'SET_LABEL':
-            return {...state,label:[...state.label,action.payload]}
+        case 'SET_DATE':
+            return {...state,date:action.payload}
+
+        case 'SET_SEARCH':
+            return {...state,searchValue:action.payload}
 
         default:
             return state

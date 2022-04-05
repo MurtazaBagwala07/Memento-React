@@ -25,7 +25,7 @@ export const InputNote = () => {
       const submitHandler=async(e)=>{
         e.preventDefault();
         const random =colors[Math.floor(Math.random()*colors.length)]
-        setInputNote({ ...inputNote,time:`${new Date(Date.now()).toLocaleDateString()}`, color:random})
+        setInputNote({ ...inputNote,time:`${new Date(Date.now()).toLocaleDateString()}`, sortTime: new Date().getTime(),color:random})
         const response = await AddNoteService(inputNote,auth.token);
         dispatch({
           type:"SET_NOTES",

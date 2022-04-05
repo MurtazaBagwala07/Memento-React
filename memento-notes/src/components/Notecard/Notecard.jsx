@@ -55,7 +55,7 @@ export const Notecard = ({note}) => {
   return (
     <>
     <div className={`notecard ${note.color}`}>
-      <h2 className="note-title">{note.title} {note.color}</h2>
+      <h2 className="note-title">{note.title}</h2>
       <h4 className="note-content">{note.content}</h4>
       <h5>Time Created : {note.time}</h5>
       {colorPalette && 

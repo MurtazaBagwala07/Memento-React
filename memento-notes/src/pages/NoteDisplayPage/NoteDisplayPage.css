@@ -15,3 +15,9 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.note-filter-wrapper{
+    border: 0.1rem solid var(--black);
+    width:20rem;
+    
+}
