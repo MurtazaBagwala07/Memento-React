@@ -6,14 +6,14 @@ Memento Notes is a note taking web app which allows its user to add , delete , e
 
 React JS 
 
-##Pages
+## Pages
 
-*Landing Page
-*Notes Page
-*Archive Page
-*Labels Page
-*Sign Up Page
-*Login Page
+* Landing Page
+* Notes Page
+* Archive Page
+* Labels Page
+* Sign Up Page
+* Login Page
 
 ## Screenshots
 ![Screenshot 2022-04-06 165348](https://user-images.githubusercontent.com/75979676/161965625-017b887e-b600-464a-9f8a-cf9a5fb3b85e.png)
