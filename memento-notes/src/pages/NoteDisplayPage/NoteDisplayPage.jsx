@@ -34,11 +34,10 @@ export const NoteDisplayPage = () => {
               type:'SET_SEARCH',
               payload:e.target.value
             })} 
-            value={state.search} className='note-search-input' type="text" />
+            value={state.search} className='note-search-input' type="text" placeholder='Search for Notes here'/>
             <i onClick={toggleFilters} class="fas fa-filter"></i>
           </div>
           {filters && <div className="note-filter">
-              <div>
                 <label className='filter-input'>
                 <input
                   onClick={(e) =>
@@ -67,14 +66,15 @@ export const NoteDisplayPage = () => {
                 />
                 <span className='filter-type'>Oldest to Recent</span>
                 </label>
-              </div>
           </div>}
-          
-        {notesToDisplay.map((note)=>{
+          <div className='notes-container'>
+          {notesToDisplay.map((note)=>{
           return(
             <Notecard note={note} />
           )
         })}
+          </div>
+        
         </div>
       </div>
     </div>

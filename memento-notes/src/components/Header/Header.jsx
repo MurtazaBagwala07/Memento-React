@@ -10,6 +10,7 @@ export const Header = () => {
   const LogOutHandler=()=>{
     localStorage.removeItem('token')
     localStorage.removeItem('isAuth')
+    localStorage.removeItem('user')
     setAuth(initialAuth);
     navigate('/login')  
     }
@@ -22,7 +23,7 @@ export const Header = () => {
               className="social-link"
               rel="noreferrer"
               target="_blank"
-              href="https://github.com/MurtazaBagwala07"
+              href="https://github.com/MurtazaBagwala07/Memento-React"
             >
               <i className="fab fa-github"></i>
             </a>

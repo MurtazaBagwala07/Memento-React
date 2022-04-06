@@ -1,7 +1,7 @@
 import React from 'react'
 import {Header, InputNote,Notecard,Sidebar} from '../../components'
 import {useNotes} from '../../hooks'
-import '../NoteDisplayPage/NoteDisplayPage.css'
+import './LabelDisplayPage.css'
 
 export const LabelDisplayPage = () => {
     const {state} = useNotes();
@@ -12,14 +12,14 @@ export const LabelDisplayPage = () => {
       <Header/>
     <div className="page-wrapper">
       <Sidebar/>
-      <div className='notes-page'>
+      <div className='label-page'>
         {
             uniqueLabels.map((label) =>{
                 const labelNotes = state.notes.filter((item) => item.label === label)
                 return (
-                    <div key={label} className="element-container">
-                      <h1 className="element-tag">Label : {label}</h1>
-                      <div className="tags-inner-container">
+                    <div key={label} className="label-container">
+                      <h1 className="label-heading">Label : {label}</h1>
+                      <div className="label-inner-container">
                         {labelNotes.map((note) => (
                           <Notecard note={note} />
                         ))}

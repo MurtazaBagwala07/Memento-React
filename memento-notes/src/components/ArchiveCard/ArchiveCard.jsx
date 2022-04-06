@@ -1,6 +1,7 @@
 import React from 'react'
 import {RestoreFromArchive,DeleteFromArchive} from '../../services'
 import {useAuth,useNotes} from '../../hooks'
+import './ArchiveCard.css'
 
 export const ArchiveCard = ({arch}) => {
 
@@ -29,10 +30,11 @@ export const ArchiveCard = ({arch}) => {
     }
 
   return (
-    <div className="notecard" >
+    <div className={`notecard ${arch.color}`} >
+      <span className='archive-label'>Archived</span>
       <h2 className="note-title">{arch.title}</h2>
       <h4 className="note-content">{arch.content}</h4>
-      <h5>Time Created : </h5>
+      <h5>Time Created : {arch.time}</h5>
       <div className="note-action-btns">
         <button onClick={()=>restoreNote(arch)} className="note-action-btn">
             <i class="fas fa-trash-restore"></i>

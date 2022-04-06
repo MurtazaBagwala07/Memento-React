@@ -55,11 +55,12 @@ export const Notecard = ({note}) => {
   return (
     <>
     <div className={`notecard ${note.color}`}>
+      <span className="note-label"><i class="fas fa-tag"></i> {note.label}</span>
       <h2 className="note-title">{note.title}</h2>
       <h4 className="note-content">{note.content}</h4>
       <h5>Time Created : {note.time}</h5>
       {colorPalette && 
-      <div className="note-color-buttons">
+      <div className="note-color-btns">
         <button
           className="color-btn shade-1"
           onClick={()=>noteColorChange(note,'shade-1')} 
