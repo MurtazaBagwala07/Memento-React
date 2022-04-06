@@ -1,0 +1,8 @@
+.archive-label{
+    position: absolute;
+    top: 0.2rem;
+    left:0.3rem;
+    background-color: lightgreen;
+    padding: 0.2rem;
+    font-size:0.8rem;
+}

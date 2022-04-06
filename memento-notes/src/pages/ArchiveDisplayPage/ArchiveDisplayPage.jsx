@@ -13,7 +13,7 @@ export const ArchiveDisplayPage = () => {
       <Header/>
     <div className="page-wrapper">
       <Sidebar/>
-      <div className='notes-page'>
+      <div className='archive-page'>
         {state.archivedNotes.map((arch)=>{
             return (
                 <ArchiveCard arch={arch}/>

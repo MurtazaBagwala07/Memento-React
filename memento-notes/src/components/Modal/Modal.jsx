@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
+import ReactDOM from "react-dom";
 import { EditNoteService } from '../../services';
 import {useAuth,useNotes} from '../../hooks'
+import './Modal.css'
 
 export const Modal = ({note,setEdit}) => {
     const {auth} = useAuth();
@@ -14,9 +16,7 @@ export const Modal = ({note,setEdit}) => {
     }
 
     const editNote=async(editInput)=>{
-        console.log(editInput)
         const response = await EditNoteService(editInput,auth.token)
-        console.log(response)
         dispatch({
             type: 'SET_NOTES',
             payload: response
@@ -24,16 +24,20 @@ export const Modal = ({note,setEdit}) => {
         setEdit(false)
     }
 
-  return (
-    <div class="modal-container">
-    <input onChange={(e)=>editHandler(e)} name='title' value={editInput.title} class="modal-title"/>
-    <input onChange={(e)=>editHandler(e)} name='content' value={editInput.content} class="modal-body"/>
-    <div class="modal-action-btns">
-        <button onClick={()=>setEdit(false)} class="modal-btn modal-alert-btn">Delete</button>
-        <button onClick={()=>editNote(editInput)} class="modal-btn modal-success-btn">Save</button>
+  return ReactDOM.createPortal(
+      <>
+    <div className="modal-page">
+        <div class="modal-container">
+        <input onChange={(e)=>editHandler(e)} name='title' value={editInput.title} class="modal-title" placeholder='Edit Title...'/>
+        <input onChange={(e)=>editHandler(e)} name='content' value={editInput.content} class="modal-body" placeholder='Edit Content'/>
+        <div class="modal-action-btns">
+            <button onClick={()=>setEdit(false)} class="modal-btn modal-alert-btn">Cancel</button>
+            <button onClick={()=>editNote(editInput)} class="modal-btn modal-success-btn">Edit</button>
+        </div>
+        </div>
     </div>
-</div>
-
+    </>,
+    document.getElementById('portal')
   )
 }
 

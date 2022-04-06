@@ -17,3 +17,114 @@
 .shade-5{
     background-color: #EFC88B;
 }
+
+
+.notecard {
+    width: 20rem;
+    color: var(--black);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;  
+
+  }
+
+  .notecard:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;  }
+  
+  .note-title {
+    font-size: 2rem;
+  }
+  
+  .note-content {
+    font-size: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 3rem;
+    max-height: 10rem;
+    min-width: 15rem;
+    max-width: 30rem;
+    word-break: break-all;
+  }
+  
+  .red {
+    background-color: var(--red);
+  }
+  
+  .blue {
+    background-color: var(--blue);
+  }
+  
+  .green {
+    background-color: var(--green);
+  }
+  
+  .black {
+    background-color: var(--black);
+  }
+  
+  .orange {
+    background-color: var(--primary-color);
+  }
+  
+  .note-color-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+  }
+  
+  .color-btn {
+    color: var(--secondary-color);;
+    font-size: 0.75rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    outline: none;
+    border: 0.1rem solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .note-action-btns {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .note-action-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);;
+    border: 0.1rem solid var(--secondary-color);;
+    font-weight: 900;
+    font-size: 1rem;
+    outline: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+
+  .note-action-btn:hover{
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--primary-color)
+  }
+
+  .note-label{
+    position: absolute;
+    top: 0.2rem;
+    left:0.3rem;
+    background-color: lightgreen;
+    padding: 0.4rem;
+    font-size:0.8rem;
+    border-radius: 0.2rem;
+  }

@@ -13,17 +13,36 @@ export const Login = () => {
         password:'',
     })
 
+
     const inputHandler =(e)=>{
         setLogin((prev)=>({...prev,[e.target.name]:e.target.value}))
     }
 
+
+    
     const loginHandler = async(e)=>{
         e.preventDefault()
-        const token =  await LoginService(login.email, login.password)
-        if(token){
-            localStorage.setItem("token", token);
+        const data =  await LoginService(login.email, login.password)
+        console.log(data)
+        if(data){
+            localStorage.setItem("token", data.encodedToken);
 		    localStorage.setItem("isAuth", true);
-            setAuth({...auth, token:token,isAuth:true});
+            localStorage.setItem("user",data.foundUser.firstName);
+            setAuth({...auth, token:data.encodedToken,isAuth:true});
+            navigate('/notes')
+        }
+    }
+
+    const guestLogin=async(e)=>{
+        e.preventDefault();
+        const data =  await LoginService('adarshbalika@gmail.com','adarshBalika123' )
+        console.log(data)
+
+        if(data){
+            localStorage.setItem("token", data.encodedToken);
+		    localStorage.setItem("isAuth", true);
+            localStorage.setItem("user",data.foundUser.firstName);
+            setAuth({...auth, token:data.encodedToken,isAuth:true});
             navigate('/notes')
         }
     }
@@ -37,18 +56,19 @@ export const Login = () => {
             <div className="login-input-container">
                 <label htmlFor="login-email"> Email : 
                 </label>
-                <input name='email' onChange={(e)=>inputHandler(e)} className="login-input" type="email" />
+                <input name='email' onChange={(e)=>inputHandler(e)} className="login-input" type="email" required/>
             </div>
 
             <div className="login-input-container">
                 <label htmlFor="login-password"> Password : 
                 </label>
-                <input name='password' onChange={(e)=>inputHandler(e)} className="login-input" type="text" />
+                <input name='password' onChange={(e)=>inputHandler(e)} className="login-input" type="text" required/>
             </div>
             
             
             <button onClick={(e)=>loginHandler(e)} className="login-btn">Login</button>
-            <p className='login-signup-btn'>Create a new account</p>
+            <button onClick={(e)=>guestLogin(e)} className="login-btn">Login With Test Credentials</button>
+            <p onClick={()=>navigate('/sign-up')} className='login-signup-btn'>Create a new account</p>
         </div>
         
     </form>

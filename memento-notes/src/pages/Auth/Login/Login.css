@@ -37,7 +37,7 @@
 }
 
 .login-btn{
-    width:8rem;
+    width:12rem;
     height:2.5rem;
     color: var(--primary-color);
     border:0.1rem solid var(--primary-color);
@@ -50,10 +50,20 @@
     cursor: pointer;
 }
 
+.login-signup-btn:hover{
+    text-decoration:underline;
+}
+
 .login-input{
     height: 2rem;
     width:12rem;
     padding: 0.25rem;
     outline-color: var(--primary-color);
     color: var(--primary-color);
+}
+
+.login-btn:hover{
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from '../../../hooks';
 import { SignUpService } from '../../../services';
 import {Header} from '../../../components'
+import './SignUp.css'
 
 export const SignUp = () => {
 
@@ -17,6 +18,7 @@ export const SignUp = () => {
 
     const inputHandler=(e)=>{
         setSignUp((prevData)=>({...prevData,[e.target.name]:e.target.value}))
+        
     }
 
     const signUpHandler = async(e)=>{
@@ -30,39 +32,39 @@ export const SignUp = () => {
     }
 
   return (
-    <div className='login-page-wrapper'>
+    <div className='signup-page-wrapper'>
         <Header/>
-    <form className="login-form-wrapper">
+    <form onSubmit={signUpHandler} className="signup-form-wrapper">
         <h1>Sign-up</h1>
-        <div className="login-wrapper">
+        <div className="signup-wrapper">
 
-            <div className="login-input-container">
-                <label htmlFor="login-email"> First Name : 
+            <div className="signup-input-container">
+                <label htmlFor="signup-fname"> First Name : 
                 </label>
-                <input name='firstName' onChange={(e)=>inputHandler(e)} className="login-input" type="text" />
+                <input name='firstName' onChange={(e)=>inputHandler(e)} className="signup-input" type="text" required/>
             </div>
 
-            <div className="login-input-container">
-                <label htmlFor="login-email"> Last Name :  
+            <div className="signup-input-container">
+                <label htmlFor="signup-lname"> Last Name :  
                 </label>
-                <input name='lastName' onChange={(e)=>inputHandler(e)} className="login-input" type="text" />
+                <input name='lastName' onChange={(e)=>inputHandler(e)} className="signup-input" type="text" required/>
             </div>
 
-            <div className="login-input-container">
-                <label htmlFor="login-email"> Email : 
+            <div className="signup-input-container">
+                <label htmlFor="signup-email"> Email : 
                 </label>
-                <input name='email' onChange={(e)=>inputHandler(e)} className="login-input" type="email" />
+                <input name='email' onChange={(e)=>inputHandler(e)} className="signup-input" type="email" required/>
             </div>
 
-            <div className="login-input-container">
-                <label htmlFor="login-password"> Password : 
+            <div className="signup-input-container">
+                <label htmlFor="signup-password"> Password : 
                 </label>
-                <input name='password' onChange={(e)=>inputHandler(e)} className="login-input" type="text" />
+                <input name='password' onChange={(e)=>inputHandler(e)} className="signup-input" type="text" required/>
             </div>
             
             
-            <button onClick={(e)=>signUpHandler(e)} className="login-btn">Sign Up</button>
-            <p className='login-signup-btn'>Already have an account</p>
+            <button type="submit" onClick={(e)=>signUpHandler(e)} className="signup-btn">Sign Up</button>
+            <p onClick={()=>navigate('/login')} className='signup-signup-btn'>Already have an account</p>
         </div>
         
     </form>

@@ -25,10 +25,27 @@
 }
 
 .homepage-action-btn{
-    width:12rem;
+    width:10rem;
     height:3rem;
+    font-size:1.2rem;
+    cursor: pointer;
+}
+
+.main-button{
+    background-color:var(--primary-color);
+    color:var(--secondary-color);
+    outline:none;
+    border: none;
+}
+
+.main-button:hover{
     color:var(--primary-color);
     border:0.1rem solid var(--primary-color);
     background-color: var(--secondary-color);
-    font-size:1.2rem;
+}
+
+.secondary-button{
+    color:var(--primary-color);
+    border:0.1rem solid var(--primary-color);
+    background-color: var(--secondary-color);
 }
