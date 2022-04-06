@@ -16,9 +16,7 @@ export const Modal = ({note,setEdit}) => {
     }
 
     const editNote=async(editInput)=>{
-        console.log(editInput)
         const response = await EditNoteService(editInput,auth.token)
-        console.log(response)
         dispatch({
             type: 'SET_NOTES',
             payload: response

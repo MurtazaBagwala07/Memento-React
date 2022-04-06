@@ -41,13 +41,9 @@ export const InputNote = () => {
 
       const submitHandler=async(e)=>{
         e.preventDefault();
-        
-
         const time=`${new Date(Date.now()).toLocaleDateString()}`
         const sortTime = new Date().getTime()
-
         setInputNote((prev)=>({...prev,time,sortTime}))
-        console.log(inputNote)
         const response = await AddNoteService(inputNote,auth.token);
         dispatch({
           type:"SET_NOTES",

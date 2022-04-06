@@ -15,7 +15,6 @@ export const NoteDisplayPage = () => {
     setFilters((prev)=>!prev)
   }
 
-  console.log(state)
 
   let notesToDisplay = searchNote(state.notes,state.searchValue)
   notesToDisplay = sortByDate(notesToDisplay,state.date)
