@@ -16,11 +16,12 @@ export const LabelDisplayPage = () => {
         {
             uniqueLabels.map((label) =>{
                 const labelNotes = state.notes.filter((item) => item.label === label)
+                const filteredNotes = labelNotes.filter((note)=>note.label!=='')
                 return (
                     <div key={label} className="label-container">
                       <h1 className="label-heading">Label : {label}</h1>
                       <div className="label-inner-container">
-                        {labelNotes.map((note) => (
+                        {filteredNotes.map((note) => (
                           <Notecard note={note} />
                         ))}
                       </div>
