@@ -1,19 +1,25 @@
-import {useAuth} from '../../hooks'
-import { useNavigate } from "react-router-dom";
+import {useAuth,useNotes} from '../../hooks'
+import { useNavigate,useLocation } from "react-router-dom";
 
 
 export const Header = () => {
 
   const navigate = useNavigate();
+  const {pathname} =useLocation();
   const {setAuth,initialAuth} = useAuth(); 
+  const {state,dispatch} = useNotes();
   
   const LogOutHandler=()=>{
     localStorage.removeItem('token')
     localStorage.removeItem('isAuth')
     localStorage.removeItem('user')
     setAuth(initialAuth);
-    navigate('/login')  
+    dispatch({
+      type:'LOGOUT_USER'
+    })
+    navigate('/login') 
     }
+
     return (
       <header className="header-wrapper">
         <div className="header-title">Memento</div>
@@ -39,9 +45,9 @@ export const Header = () => {
               <i className="fab fa-twitter-square"></i>
             </a>
           </div>
-          <div onClick={()=>LogOutHandler()} className="header-social-icon">
+          {pathname!=='/login' && pathname!=='/sign-up' && <div onClick={()=>LogOutHandler()} className="header-social-icon">
           <i className="fas fa-sign-out-alt"></i>
-          </div>
+          </div>}
 
         </div>
       </header>

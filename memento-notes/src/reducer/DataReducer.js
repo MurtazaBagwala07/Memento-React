@@ -3,7 +3,6 @@ export const initialState ={
     archivedNotes:[],
     searchValue:'',
     date:''
-
 }
 
 export const DataReducer=(state,action)=>{
@@ -20,6 +19,15 @@ export const DataReducer=(state,action)=>{
 
         case 'SET_SEARCH':
             return {...state,searchValue:action.payload}
+
+        case 'LOGOUT_USER':{
+            return {
+                notes:[],
+                archivedNotes:[],
+                searchValue:'',
+                date:''
+            }
+        }
 
         default:
             return state

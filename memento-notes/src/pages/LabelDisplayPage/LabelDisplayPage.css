@@ -21,6 +21,11 @@
     padding: 1rem;
 }
 
+.label-page-title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 .label-container{
     display: flex;
     flex-direction: column;
