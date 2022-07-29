@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { AddNoteService } from '../../services';
 import {useAuth,useNotes} from '../../hooks'
 import './InputNote.css'
+import {toastHandler} from '../../utils/utilFilter'
 
 export const InputNote = () => {
 
@@ -41,6 +42,22 @@ export const InputNote = () => {
 
       const submitHandler=async(e)=>{
         e.preventDefault();
+
+        if(inputNote.title === ""){
+          toastHandler('warn','Title cannot be empty')
+          return;
+        }
+
+        if(inputNote.content === ""){
+          toastHandler('warn','Content cannot be empty')
+          return;
+        }
+
+        if(inputNote.label === ""){
+          toastHandler('warn','Label cannot be empty')
+          return;
+        }
+
         const time=`${new Date(Date.now()).toLocaleDateString()}`
         const sortTime = new Date().getTime()
         setInputNote((prev)=>({...prev,time,sortTime}))

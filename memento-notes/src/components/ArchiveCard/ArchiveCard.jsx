@@ -2,6 +2,7 @@ import React from 'react'
 import {RestoreFromArchive,DeleteFromArchive} from '../../services'
 import {useAuth,useNotes} from '../../hooks'
 import './ArchiveCard.css'
+import { toastHandler } from '../../utils/utilFilter'
 
 export const ArchiveCard = ({arch}) => {
 
@@ -10,6 +11,7 @@ export const ArchiveCard = ({arch}) => {
     
     const restoreNote=async(arch)=>{
         const resp = await RestoreFromArchive(arch._id,auth.token)
+        toastHandler('success','Note successfully restored')
         dispatch({
             type:"SET_ARCHIVE",
             payload:resp.archives
@@ -22,7 +24,7 @@ export const ArchiveCard = ({arch}) => {
 
     const deleteArchive=async(arch)=>{
         const resp = await DeleteFromArchive(arch._id,auth.token)
-
+        toastHandler('success','Note deleted from archived')
         dispatch({
             type:"SET_ARCHIVE",
             payload:resp

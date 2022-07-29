@@ -5,7 +5,7 @@ import './Sidebar.css'
 
 
 export const Sidebar = () => {
-    const userName = localStorage.getItem('user')
+    const user = JSON.parse(localStorage.getItem('user'))
   return (
     <aside className='sidebar-wrapper'>
         <ul className='sidebar-list-wrapper'>
@@ -19,7 +19,7 @@ export const Sidebar = () => {
                 <NavLink className='sidebar-link' to='/labels'><i class="fas fa-tag"></i>  Labels</NavLink>
             </div>
             <div className='sidebar-list-item'>
-                <NavLink className='sidebar-link' to='/#'><i class="fas fa-user-circle"></i> {userName}</NavLink>
+                <NavLink className='sidebar-link' to='/profile'><i class="fas fa-user-circle"></i> {user.firstName}</NavLink>
             </div>
         </ul>
     </aside>

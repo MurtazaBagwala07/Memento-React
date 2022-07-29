@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../../../hooks';
+import {toastHandler} from '../../../utils/utilFilter'
 import { SignUpService } from '../../../services';
 import {Header} from '../../../components'
 import './SignUp.css'
@@ -24,8 +25,13 @@ export const SignUp = () => {
     const signUpHandler = async(e)=>{
         e.preventDefault()
         const {firstName,lastName,email,password} = signUp
+        if(firstName===''||lastName===''||email===''||password===''){
+            toastHandler('warn', 'Please enter all the details')
+            return
+        }
         const token = await SignUpService(firstName,lastName,email,password)
         if(token) {
+            toastHandler('success','Sign Up Successful')
             navigate('/login')
         }
     }
