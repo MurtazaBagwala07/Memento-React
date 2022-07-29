@@ -24,7 +24,6 @@ export const NoteProvider =({children})=>{
                 })
             }            
         })();
-        console.log(state);
     },[auth.isAuth])
     return(
         <NoteContext.Provider value={{state,dispatch}}>

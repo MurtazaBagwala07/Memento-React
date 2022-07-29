@@ -1,5 +1,5 @@
 import "./App.css";
-import {Homepage,Login,SignUp,NoteDisplayPage,ArchiveDisplayPage,LabelDisplayPage} from "./pages";
+import {Homepage,Login,SignUp,NoteDisplayPage,ArchiveDisplayPage,LabelDisplayPage,NotFound} from "./pages";
 import { Routes, Route } from 'react-router-dom';
 import Mockman from 'mockman-js'
 import {useAuth} from './hooks'
@@ -25,6 +25,7 @@ function App() {
       <Route path='/archive' element={auth.isAuth?<ArchiveDisplayPage/>:<Login/>}/>
       <Route path='/labels' element={auth.isAuth?<LabelDisplayPage/>:<Login/>}/>
       <Route path='/mockman' element={<MockAPI/>}/>
+      <Route path='*' element={<NotFound/>}></Route>
     </Routes>    
     </div>
   );

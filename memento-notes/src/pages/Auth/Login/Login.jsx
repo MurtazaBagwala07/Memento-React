@@ -23,7 +23,6 @@ export const Login = () => {
     const loginHandler = async(e)=>{
         e.preventDefault()
         const data =  await LoginService(login.email, login.password)
-        console.log(data)
         if(data){
             localStorage.setItem("token", data.encodedToken);
 		    localStorage.setItem("isAuth", true);
@@ -35,8 +34,7 @@ export const Login = () => {
 
     const guestLogin=async(e)=>{
         e.preventDefault();
-        const data =  await LoginService('adarshbalika@gmail.com','adarshBalika123' )
-        console.log(data)
+        const data =  await LoginService('murtaza@gmail.com','murtaza123' )
 
         if(data){
             localStorage.setItem("token", data.encodedToken);
@@ -62,7 +60,7 @@ export const Login = () => {
             <div className="login-input-container">
                 <label htmlFor="login-password"> Password : 
                 </label>
-                <input name='password' onChange={(e)=>inputHandler(e)} className="login-input" type="text" required/>
+                <input name='password' onChange={(e)=>inputHandler(e)} className="login-input" type="password" required/>
             </div>
             
             

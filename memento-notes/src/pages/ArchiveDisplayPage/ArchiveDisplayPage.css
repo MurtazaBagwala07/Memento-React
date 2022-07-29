@@ -9,6 +9,17 @@
     grid-template-columns: 2fr 10fr;
 }
 
+.archive-page-container{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    margin : 2rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+}
+
 .archive-page{
     display: flex;
     flex-direction:row;

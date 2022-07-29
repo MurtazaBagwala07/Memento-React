@@ -31,7 +31,6 @@ export const RestoreFromArchive=async(id,token)=>{
         const response =await axios.post(`/api/archives/restore/${id}`,{},{
             headers:{authorization:token}
         })
-        console.log(response)
         return response.data
     } catch (error) {
         console.log(error);
@@ -43,7 +42,6 @@ export const DeleteFromArchive=async(id,token)=>{
         const response = await axios.delete(`/api/archives/delete/${id}`,{
             headers:{authorization:token}
         })
-        console.log(response)
         return response.data.archives
     } catch (error) {
         

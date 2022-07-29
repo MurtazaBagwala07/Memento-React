@@ -6,14 +6,16 @@ import './LabelDisplayPage.css'
 export const LabelDisplayPage = () => {
     const {state} = useNotes();
     const labels = state.notes.reduce((acc,curr)=> acc.concat(curr.label),[])
-    let uniqueLabels = [...new Set(labels)];
+    let labelsFiltered = [...new Set(labels)];
+    let uniqueLabels = labelsFiltered.filter((label)=>label!=='')
   return (
     <div className='main-page-wrapper'>
       <Header/>
     <div className="page-wrapper">
       <Sidebar/>
       <div className='label-page'>
-        {
+        <div className='label-page-title'>{uniqueLabels.length>0?'Label Page':'No Labels to display'}</div> 
+        { uniqueLabels.length>0 &&
             uniqueLabels.map((label) =>{
                 const labelNotes = state.notes.filter((item) => item.label === label)
                 const filteredNotes = labelNotes.filter((note)=>note.label!=='')

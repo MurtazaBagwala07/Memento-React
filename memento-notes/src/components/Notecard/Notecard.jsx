@@ -92,13 +92,13 @@ export const Notecard = ({note}) => {
           <i class="fas fa-palette"></i>
         </button>
         <button onClick={()=>setEdit(true)} className="note-action-btn">
-          <i class="far fa-edit"></i>
+          <i class="fas fa-edit"></i>
         </button>
         <button onClick={()=>moveToArchive(note)} className="note-action-btn">
           <i class="fas fa-archive"></i>
         </button>
         <button onClick={()=>deleteNote(note._id)} className="note-action-btn">
-          <i class="far fa-trash-alt"></i>
+          <i class="fas fa-trash-alt"></i>
         </button>
       </div>
     </div>

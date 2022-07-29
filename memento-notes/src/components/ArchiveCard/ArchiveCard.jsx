@@ -40,7 +40,7 @@ export const ArchiveCard = ({arch}) => {
             <i class="fas fa-trash-restore"></i>
         </button>
         <button onClick={()=>deleteArchive(arch)} className="note-action-btn">
-          <i class="far fa-trash-alt"></i>
+          <i class="fas fa-trash-alt"></i>
         </button>
       </div>
     </div>

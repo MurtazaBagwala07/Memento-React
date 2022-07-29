@@ -13,12 +13,15 @@ export const ArchiveDisplayPage = () => {
       <Header/>
     <div className="page-wrapper">
       <Sidebar/>
-      <div className='archive-page'>
-        {state.archivedNotes.map((arch)=>{
-            return (
-                <ArchiveCard arch={arch}/>
-            )
-        })}
+      <div className="archive-page-container">
+        <h1>{state?.archivedNotes?.length>0?'Archived Notes' : 'No Archived Notes Yet'}</h1> 
+        {state?.archivedNotes?.length>0 && <div className='archive-page'>
+          {state.archivedNotes.map((arch)=>{
+              return (
+                  <ArchiveCard arch={arch}/>
+              )
+          })}
+        </div>}
       </div>
     </div>
     </div>

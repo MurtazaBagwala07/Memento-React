@@ -20,7 +20,6 @@ export const AddNoteService=async(note,token)=>{
         },{ headers :{authorization:token}})
 
         if(response.status===200 || response.status===201){
-            console.log(response.data.notes);
             return response.data.notes;
         }
 

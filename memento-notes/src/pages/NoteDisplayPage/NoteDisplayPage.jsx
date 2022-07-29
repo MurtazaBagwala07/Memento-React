@@ -28,6 +28,7 @@ export const NoteDisplayPage = () => {
       <div className='notes-page'>
         <InputNote/>
         <div className="note-wrapper">
+          <h1>{state?.notes?.length>0?'Notes Page' : 'No Notes Yet'}</h1>
           <div className="note-filter-wrapper">
             <input onChange={(e)=>dispatch({
               type:'SET_SEARCH',

@@ -28,7 +28,6 @@ export const SignUp = () => {
         if(token) {
             navigate('/login')
         }
-        console.log(token)
     }
 
   return (
@@ -59,7 +58,7 @@ export const SignUp = () => {
             <div className="signup-input-container">
                 <label htmlFor="signup-password"> Password : 
                 </label>
-                <input name='password' onChange={(e)=>inputHandler(e)} className="signup-input" type="text" required/>
+                <input name='password' onChange={(e)=>inputHandler(e)} className="signup-input" type="password" required/>
             </div>
             
             
