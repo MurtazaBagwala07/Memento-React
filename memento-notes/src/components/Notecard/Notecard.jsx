@@ -3,6 +3,7 @@ import { DeleteNoteService,AddtoArchive,EditNoteService } from '../../services'
 import {useAuth,useNotes} from '../../hooks'
 import {Modal} from '../Modal/Modal'
 import './Notecard.css'
+import {toastHandler} from '../../utils/utilFilter'
 
 export const Notecard = ({note}) => {
   const {auth} = useAuth();
@@ -13,6 +14,7 @@ export const Notecard = ({note}) => {
 
   const deleteNote=async(id)=>{
     const response = await DeleteNoteService(id,auth.token);
+    toastHandler('success','Note successfully deleted')
     dispatch({
       type:"SET_NOTES",
       payload:response
@@ -33,15 +35,17 @@ export const Notecard = ({note}) => {
         return note
       }
     })
-    console.log(updatesNotes)
+    toastHandler('success','Note color changed')
     dispatch({
       type:'SET_NOTES',
       payload:updatesNotes
     })
+    setColorPalette(false)
   }
 
   const moveToArchive = async(note)=>{
     const resp = await AddtoArchive(note,auth.token)
+    toastHandler('success','Note successfully archived')
     dispatch({
       type:"SET_ARCHIVE",
       payload:resp.archives

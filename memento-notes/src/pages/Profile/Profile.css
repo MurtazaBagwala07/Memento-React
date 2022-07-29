@@ -1,0 +1,24 @@
+.profile-page-wrapper{
+    display: flex;
+    flex-direction:column;
+    width:100vw;
+}
+
+.profile-main-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:90vh;
+}
+
+.profile-container{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap: 2rem;
+    background-color:var(--primary-color);
+    padding:5rem;
+    border-radius: 0.5rem;
+}

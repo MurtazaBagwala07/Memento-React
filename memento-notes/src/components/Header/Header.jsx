@@ -1,5 +1,6 @@
 import {useAuth,useNotes} from '../../hooks'
 import { useNavigate,useLocation } from "react-router-dom";
+import {toastHandler} from '../../utils/utilFilter'
 
 
 export const Header = () => {
@@ -17,6 +18,7 @@ export const Header = () => {
     dispatch({
       type:'LOGOUT_USER'
     })
+    toastHandler('success','Successfully Logged Out')
     navigate('/login') 
     }
 

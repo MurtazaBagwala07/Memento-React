@@ -1,12 +1,18 @@
 import React from 'react'
 import './Homepage.css'
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../../hooks';
 
 export const Homepage = () => {
     const navigate=useNavigate()
+    const {auth} = useAuth();
+
+    if(auth.isAuth){
+      navigate('/notes')
+    }
+
   return (
     <div className="homepage">
-
       <div className='homepage-wrapper'>
         <h1 className='homepage-title'>Memento Notes  <i class="far fa-clipboard"></i></h1>
         <h4 className='homepage-description'>Create , Store , Share notes</h4>

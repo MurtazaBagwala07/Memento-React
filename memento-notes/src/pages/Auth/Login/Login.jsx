@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {Header} from '../../../components'
 import './Login.css'
+import {toastHandler} from '../../../utils/utilFilter'
 import { useNavigate } from "react-router-dom";
 import {useAuth} from '../../../hooks'
 import {LoginService} from '../../../services'
@@ -22,12 +23,19 @@ export const Login = () => {
     
     const loginHandler = async(e)=>{
         e.preventDefault()
+
+        if(login.email===''||login.password===''){
+            toastHandler('warn','Enter Correct Details')
+            return
+        }
+
         const data =  await LoginService(login.email, login.password)
         if(data){
             localStorage.setItem("token", data.encodedToken);
 		    localStorage.setItem("isAuth", true);
-            localStorage.setItem("user",data.foundUser.firstName);
+            localStorage.setItem("user",JSON.stringify(data.foundUser));
             setAuth({...auth, token:data.encodedToken,isAuth:true});
+            toastHandler('success','Login Successful')
             navigate('/notes')
         }
     }
@@ -39,8 +47,9 @@ export const Login = () => {
         if(data){
             localStorage.setItem("token", data.encodedToken);
 		    localStorage.setItem("isAuth", true);
-            localStorage.setItem("user",data.foundUser.firstName);
+            localStorage.setItem("user",JSON.stringify(data.foundUser));
             setAuth({...auth, token:data.encodedToken,isAuth:true});
+            toastHandler('success','Login Successful')
             navigate('/notes')
         }
     }

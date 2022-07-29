@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { EditNoteService } from '../../services';
 import {useAuth,useNotes} from '../../hooks'
 import './Modal.css'
+import {toastHandler} from '../../utils/utilFilter'
 
 export const Modal = ({note,setEdit}) => {
     const {auth} = useAuth();
@@ -17,6 +18,7 @@ export const Modal = ({note,setEdit}) => {
 
     const editNote=async(editInput)=>{
         const response = await EditNoteService(editInput,auth.token)
+        toastHandler('success','Note Edited Successfully')
         dispatch({
             type: 'SET_NOTES',
             payload: response
