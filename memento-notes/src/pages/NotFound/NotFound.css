@@ -1,0 +1,9 @@
+.page-not-found{
+    height:90vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:2rem;
+    color:var(--primary-color)
+}

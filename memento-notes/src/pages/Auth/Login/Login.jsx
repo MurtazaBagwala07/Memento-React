@@ -34,7 +34,7 @@ export const Login = () => {
 
     const guestLogin=async(e)=>{
         e.preventDefault();
-        const data =  await LoginService('adarshbalika@gmail.com','adarshBalika123' )
+        const data =  await LoginService('murtaza@gmail.com','murtaza123' )
 
         if(data){
             localStorage.setItem("token", data.encodedToken);
